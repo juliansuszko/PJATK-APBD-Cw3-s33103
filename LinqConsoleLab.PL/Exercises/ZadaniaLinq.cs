@@ -302,7 +302,8 @@ public sealed class ZadaniaLinq
     /// </summary>
     public IEnumerable<string> Zadanie15_ProwadzacyILiczbaPrzedmiotow()
     {
-        throw Niezaimplementowano(nameof(Zadanie15_ProwadzacyILiczbaPrzedmiotow));
+        return DaneUczelni.Prowadzacy
+            .Select(pr => $"{pr.Imie} {pr.Nazwisko}: {DaneUczelni.Przedmioty.Count(p => p.ProwadzacyId == pr.Id)}");
     }
 
     /// <summary>
